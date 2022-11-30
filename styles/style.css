@@ -1,0 +1,14 @@
+header {
+  background-color: lightskyblue;
+}
+
+main h3 {
+  font-family: monospace;
+}
+
+form #email {
+  background-color: lightgrey;
+}
+form #first-name, form #other-names {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}/*# sourceMappingURL=style.css.map */
