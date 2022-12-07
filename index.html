@@ -5,26 +5,80 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/styles/style.css">
+  <link rel="stylesheet" href="bootstrap.css">
   <title>Sign-up</title>
 </head>
-<body>
-  <header>Spooky town</header>
-  <main>
-    <h3>Sign-up</h3>
-    <form action="#" method="post">
-      <div>
-        <label for="first-name">First-Name:</label>
-        <input type="text" name="firstName" id="first-name">
+<body style="background-color: rgb(24, 23, 23);">
+  <main class="main">
+    <div class="left">
+      <div class="odin-logo">
+        <img src="/images/odin-lined.png" alt="" height="100%">
+        <h1>ODIN</h1>
       </div>
-      <div>
-        <label for="other-names">Other Names:</label>
-        <input type="text" name="otherNames" id="other-names">
-      </div>
-      <div>
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
-      </div>
-    </form>
+      <footer>Photo by <a href="https://www.pexels.com/@adthiry/">Ad Thiry</a> on <a href="https://www.pexels.com/" style="text-decoration:none;">pexels.com</a></footer>
+    </div>
+    <div class="right">
+      <header>
+        <h6>This is not a real online service! You know you need something like this in your life to help you realize your deepest dreams.<br>Sign up now to get started</h6>
+        <p style="font-weight: 500;">You know you want to.</p>
+      </header>
+      <form action="#" method="post">
+        <h5>Let's do this!</h5>
+        <main class="row row-cols-2">
+          <div class="col col-sm-5">
+            <label for="first-name">FIRST NAME</label>
+            <br>
+            <input type="text" class="form-control form-control-sm" name="firstName" id="first-name">
+          </div>
+          <div class="col col-sm-5">
+            <label for="last-name">LAST NAME</label>
+            <br>
+            <input type="text" class="form-control form-control-sm" name="lastName" id="last-name">
+          </div>
+          <div class="col col-sm-5">
+            <label for="email">EMAIL</label>
+            <br>
+            <input type="email" class="form-control form-control-sm" name="email" id="email">
+          </div>
+          <div class="col col-sm-5">
+            <label for="phone-number">PHONE NUMBER</label>
+            <br>
+            <aside class="input-group input-group-sm">
+              <span class="input-group-text">+234</span>
+              <input type="text" class="form-control form-control-sm" name="phoneNumber" id="phone-number" maxlength="10">
+            </aside>  
+          </div>
+          <div class="col col-sm-5">
+            <label for="password">PASSWORD</label>
+            <br>
+            <input type="password" class="form-control form-control-sm" name="password" id="password" minlength="6" maxlength="12" required>
+          </div>
+          <div class="col col-sm-5">
+            <label for="confirm-password">CONFIRM PASSWORD</label>
+            <br>
+            <input type="password" oninput="validate()" class="form-control form-control-sm" id="confirm-password" minlength="6" maxlength="12" required>
+            <label id="warning-msg" for="confirm-password" style="color: #ff0d00;font-size: smaller;"></label>
+          </div>
+        </main>
+        
+        <div class="create-acct">
+          <button type="submit" class="btn btn-secondary">Create Account</button>
+          <h6>Already have an account? <a href="#" class="text-decoration-none">Log in</a></h6>
+        </div>
+      </form>
+    </div>
   </main>
+  <script>
+    const password = document.querySelector('#password');
+    const confirmPassword = document.querySelector('#confirm-password');
+    const warnText = document.getElementById('warning-msg');
+
+    function validate(){
+      password.value === confirmPassword.value ?
+      warnText.innerHTML = '' :
+      warnText.innerHTML = '*Passwords do not match';
+    }
+  </script>
+  <script src="bootstrap.bundle.js"></script>
 </body>
 </html>
